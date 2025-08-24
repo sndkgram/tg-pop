@@ -5,6 +5,9 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, Callb
 # Токен вашего бота
 TOKEN = '8474791343:AAFPXCqWDWfbixSc2DiGookvWi6fJcZyNx0'
 
+def start(update: Update, context: CallbackContext) -> None:
+    update.message.reply_text('Привет! Задайте мне вопрос.')
+
 def reply_to_message(update: Update, context: CallbackContext) -> None:
     if '?' in update.message.text:
         response = random.choice(['Да', 'Нет'])
